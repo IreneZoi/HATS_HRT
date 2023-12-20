@@ -1,7 +1,7 @@
 # Heavy resonance tagging (HRT)
-# CMS DAS 2023
+# CMS DAS 2024
 
-Repository for the Heavy Resonance Tagging exercise for CMSDAS@LPC2023 - https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideCMSDataAnalysisSchoolLPC2024TaggingExercise
+Repository for the Heavy Resonance Tagging exercise for CMSDAS@LPC2024 - https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideCMSDataAnalysisSchoolLPC2024TaggingExercise
 
 The tutorial is heavily based on the jet tagging tools and framework/files.
 
@@ -51,9 +51,9 @@ voms-proxy-init -voms cms -valid 192:00
 ### Checkout the code
 Open up a terminal and run the following command from your home area:
 ```bash
-mkdir das2023_hrt
-cd das2023_hrt
-wget https://raw.githubusercontent.com/IreneZoi/HATS_HRT/DAS2023/setup-libraries.ipynb
+mkdir das2024_hrt
+cd das2024_hrt
+wget https://raw.githubusercontent.com/irenedutta23/DAS2024/setup-libraries.ipynb
 ```
 
 
@@ -61,10 +61,10 @@ Go back to your Jupyter browser (Home) page and open/run(double-click) the newly
 
 
 ### Exercise
-Run the notebook [taggerComp.py](taggerComp.ipynb) in `das2023_hrt/CMSSW_11_1_0_pre5/src/DAS2023HRT`
+Run the notebook [taggerComp.ipynb](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`
 
 ## Setup on FNAL Elastic Analysis Facility (EAF) 
-To run on FNAL EAF, you will need to be on the Fermilab fgz network (if you are onsite) or use a VPN (if you are offsite, https://redtop.fnal.gov/guide-to-vpn-connections-to-fermilab/). Then login at  https://analytics-hub.fnal.gov using your FNAL Services credentials. Once you successfully connect, click on the blue button "Start My Server". And select the CMSLPC SL7 Interactive (bottom right) server options. Click Start at the bottom of the page.
+To run on FNAL EAF, you will need to be on the Fermilab fgz network (if you are onsite) or use a VPN (if you are offsite, https://redtop.fnal.gov/guide-to-vpn-connections-to-fermilab/). Then login at  https://analytics-hub.fnal.gov using your FNAL Services credentials. Once you successfully connect, click on the blue button "Start My Server". And select the CMSLPC SL7 NEW Coffea-dask Interactive (top left) server options. Click Start at the bottom of the page.
 
 To open a Terminal click on the corresponding option in the Launcher Tab. If the Launcher tab is not open, you can open a new one from the File menu in the top left. This will open a new tab with a bash terminal.
 
@@ -93,16 +93,16 @@ voms-proxy-init -voms cms -valid 192:00
 #### Checkout the code
 Open up a terminal and run the following command from your home area:
 ```bash
-mkdir das2023_hrt
-cd das2023_hrt
-wget https://raw.githubusercontent.com/IreneZoi/HATS_HRT/DAS2023/setup-libraries.ipynb
+mkdir das2024_hrt
+cd das2024_hrt
+wget https://raw.githubusercontent.com/irenedutta23/HATS_HRT/DAS2024/setup-libraries.ipynb
 ```
 
-On the left you should see the `das2023_hrt` directory you created. Double click to go in it. Now double click on the newly downloaded notebook ([setup-libraries.ipynb](setup-libraries.ipynb) - only one cell to run). This will checkout the code and setup your [setup-libraries.ipynb](setup-libraries.ipynb). After running [setup-libraries.ipynb](setup-libraries.ipynb), stop this kernel clicking on the square symbol (Interrupt kernel). You can close this tab (NOT the big browser tab). Then you can continue on to the Exercise section (below).
+On the left you should see the `das2024_hrt` directory you created. Double click to go in it. Now double click on the newly downloaded notebook ([setup-libraries.ipynb](setup-libraries.ipynb) - only one cell to run). This will checkout the code and setup your [setup-libraries.ipynb](setup-libraries.ipynb). After running [setup-libraries.ipynb](setup-libraries.ipynb), stop this kernel clicking on the square symbol (Interrupt kernel). You can close this tab (NOT the big browser tab). Then you can continue on to the Exercise section (below).
 
 
 ## Exercise
-Run the notebook [taggerComp.py](taggerComp.ipynb) in `das2023_hrt/CMSSW_11_1_0_pre5/src/DAS2023HRT`. Be sure to select the `nanohrt-hats` kernel.
+Run the notebook [taggerComp.py](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`. Be sure to select the `nanohrt-hats` kernel.
 
 ## Setup on LPC
 To run on LPC, log in via the command below (**note**: replace `username` with your `FNAL` username!).
@@ -112,11 +112,11 @@ ssh -L localhost:9999:localhost:9999 username@cmslpc-sl7.fnal.gov
 and setup CMSSW:
 ```bash
 # source /cvmfs/cms.cern.ch/cmsset_default.sh # this should be in your bash profile
-mkdir das2023_hrt
-cd das2023_hrt
+mkdir das2024_hrt
+cd das2024_hrt
 cmsrel CMSSW_11_1_0_pre5
 cd CMSSW_11_1_0_pre5/src
-git clone https://github.com/IreneZoi/HATS_HRT.git DAS2023HRT -b DAS2023
+git clone https://github.com/irenedutta23/HATS_HRT.git DAS2024HRT -b DAS2024
 cmsenv
 scram b -j 4
 cmsenv
