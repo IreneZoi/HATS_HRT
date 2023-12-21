@@ -101,7 +101,7 @@ wget https://raw.githubusercontent.com/irenedutta23/HATS_HRT/DAS2024/setup-libra
 On the left you should see the `das2024_hrt` directory you created. Double click to go in it. Now double click on the newly downloaded notebook ([setup-libraries.ipynb](setup-libraries.ipynb) - only one cell to run). This will checkout the code and setup your [setup-libraries.ipynb](setup-libraries.ipynb). After running [setup-libraries.ipynb](setup-libraries.ipynb), stop this kernel clicking on the square symbol (Interrupt kernel). You can close this tab (NOT the big browser tab). Then you can continue on to the Exercise section (below).
 
 
-## Exercise
+#### Exercise
 Run the notebook [taggerComp.py](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`. Be sure to select the `nanohrt-hats` kernel.
 
 ## Setup on LPC
@@ -128,3 +128,5 @@ Then run the notebook
 jupyter notebook --port 9999 --ip 127.0.0.1 --no-browser
 ```
 
+#### Exercise
+Run the notebook [taggerComp.py](taggerComp.ipynb) 
