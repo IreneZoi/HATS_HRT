@@ -53,7 +53,7 @@ Open up a terminal and run the following command from your home area:
 ```bash
 mkdir das2024_hrt
 cd das2024_hrt
-wget https://raw.githubusercontent.com/irenedutta23/DAS2024/setup-libraries.ipynb
+wget https://raw.githubusercontent.com/irenedutta23/HATS_HRT/DAS2024/setup-libraries.ipynb
 ```
 
 
