@@ -102,7 +102,7 @@ On the left you should see the `das2024_hrt` directory you created. Double click
 
 
 #### Exercise
-Run the notebook [taggerComp.py](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`. Be sure to select the `nanohrt-hats` kernel.
+Run the notebook [taggerComp.ipynb](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`. Be sure to select the `nanohrt-hats` kernel.
 
 ## Setup on LPC
 To run on LPC, log in via the command below (**note**: replace `username` with your `FNAL` username!).
@@ -129,4 +129,4 @@ jupyter notebook --port 9999 --ip 127.0.0.1 --no-browser
 ```
 
 #### Exercise
-Run the notebook [taggerComp.py](taggerComp.ipynb) 
+Run the notebook [taggerComp.ipynb](taggerComp.ipynb) 
