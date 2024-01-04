@@ -15,53 +15,8 @@ HATS exercise in [2021](https://github.com/cms-jet/HATS_HRT/tree/HATS2021)
 
 HATS exercise in [2020](https://github.com/gouskos/HATS2020_HRT/blob/master/README.md)
 
-Two, very similar, options are available to run the jupyter notebook: Vanderbilt anf FNAL EAF.
+Three, very similar options are available to run the jupyter notebook: FNAL EAF, LPC Cluster, and Vanderbilt. 
 
-## Setup on Vanderbilt
-To run on Vanderbilt, login at https://jupyter.accre.vanderbilt.edu/ using your CERN credentials. Once you successfully connect, you should see the following front page
-
-<img src="jupyter-login.png" width="600px" />
-
-The two most important buttons are
-  * The `new` button, which lets you open a terminal or start a new Jupyter notebook.
-  * The `control panel` button, which lets you shut down your notebook once you're done. It's helpful to do this to free up resources for other users.
-
-### Upload Grid Certificates - first time only!
-We will copy your grid certificates from the LPC cluster, to do this, open the front page (shown above), and click the `New` box at the top right, then the `Terminal` option.
-
-This will open a new tab with a bash terminal. Execute the following commands (following the appropriate prompts) to copy your certificate from the LPC to Jupyter (**note**: replace `username` with your `FNAL` username!)
-
-The following command will prompt you for your FNAL password
-```bash
-kinit username@FNAL.GOV
-rsync -rLv username@cmslpc-sl7.fnal.gov:.globus/ ~/.globus/
-chmod 755 ~/.globus
-chmod 600 ~/.globus/*
-kdestroy
-```
-
-### Initialize Your Proxy at every Login!
-If you have a password on your grid certificate, you'll need to remember to execute the following in a terminal *each time you log in to Jupyter*. Similar to the LPC cluster, you will get a new host at each logon, and the new host won't have your old credentials.
-
-Each time you log in, open a terminal and execute:
-```bash
-voms-proxy-init -voms cms -valid 192:00
-```
-
-### Checkout the code
-Open up a terminal and run the following command from your home area:
-```bash
-mkdir das2024_hrt
-cd das2024_hrt
-wget https://raw.githubusercontent.com/irenedutta23/HATS_HRT/DAS2024/setup-libraries.ipynb
-```
-
-
-Go back to your Jupyter browser (Home) page and open/run(double-click) the newly downloaded notebook  ([setup-libraries.ipynb](setup-libraries.ipynb) - downloaded just recently - only one cell to run). This will checkout the code and setup your [setup-libraries.ipynb](setup-libraries.ipynb). After running [setup-libraries.ipynb](setup-libraries.ipynb), choose "File... Close and Halt". Then you can continue on to the Exercise section (below).
-
-
-### Exercise
-Run the notebook [taggerComp.ipynb](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`
 
 ## Setup on FNAL Elastic Analysis Facility (EAF) 
 To run on FNAL EAF, you will need to be on the Fermilab fgz network (if you are onsite) or use a VPN (if you are offsite, https://redtop.fnal.gov/guide-to-vpn-connections-to-fermilab/). Then login at  https://analytics-hub.fnal.gov using your FNAL Services credentials. Once you successfully connect, click on the blue button "Start My Server". And select the CMSLPC SL7 NEW Coffea-dask Interactive (top left) server options. Click Start at the bottom of the page.
@@ -126,7 +81,57 @@ voms-proxy-init -voms cms -valid 192:00
 Then run the notebook
 ```bash
 jupyter notebook --port 9999 --ip 127.0.0.1 --no-browser
+
 ```
 
 #### Exercise
 Run the notebook [taggerComp.ipynb](taggerComp.ipynb) 
+
+
+
+## Setup on Vanderbilt (least reliable)
+To run on Vanderbilt, login at https://jupyter.accre.vanderbilt.edu/ using your CERN credentials. Once you successfully connect, you should see the following front page
+
+<img src="jupyter-login.png" width="600px" />
+
+The two most important buttons are
+  * The `new` button, which lets you open a terminal or start a new Jupyter notebook.
+  * The `control panel` button, which lets you shut down your notebook once you're done. It's helpful to do this to free up resources for other users.
+
+### Upload Grid Certificates - first time only!
+We will copy your grid certificates from the LPC cluster, to do this, open the front page (shown above), and click the `New` box at the top right, then the `Terminal` option.
+
+This will open a new tab with a bash terminal. Execute the following commands (following the appropriate prompts) to copy your certificate from the LPC to Jupyter (**note**: replace `username` with your `FNAL` username!)
+
+The following command will prompt you for your FNAL password
+```bash
+kinit username@FNAL.GOV
+rsync -rLv username@cmslpc-sl7.fnal.gov:.globus/ ~/.globus/
+chmod 755 ~/.globus
+chmod 600 ~/.globus/*
+kdestroy
+```
+
+### Initialize Your Proxy at every Login!
+If you have a password on your grid certificate, you'll need to remember to execute the following in a terminal *each time you log in to Jupyter*. Similar to the LPC cluster, you will get a new host at each logon, and the new host won't have your old credentials.
+
+Each time you log in, open a terminal and execute:
+```bash
+voms-proxy-init -voms cms -valid 192:00
+```
+
+### Checkout the code
+Open up a terminal and run the following command from your home area:
+```bash
+mkdir das2024_hrt
+cd das2024_hrt
+wget https://raw.githubusercontent.com/irenedutta23/HATS_HRT/DAS2024/setup-libraries.ipynb
+```
+
+
+Go back to your Jupyter browser (Home) page and open/run(double-click) the newly downloaded notebook  ([setup-libraries.ipynb](setup-libraries.ipynb) - downloaded just recently - only one cell to run). This will checkout the code and setup your [setup-libraries.ipynb](setup-libraries.ipynb). After running [setup-libraries.ipynb](setup-libraries.ipynb), choose "File... Close and Halt". Then you can continue on to the Exercise section (below).
+
+
+### Exercise
+Run the notebook [taggerComp.ipynb](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`
+
