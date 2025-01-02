@@ -1,11 +1,13 @@
 # Heavy resonance tagging (HRT)
 # CMS DAS 2024
 
-Repository for the Heavy Resonance Tagging exercise for CMSDAS@LPC2024 - https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideCMSDataAnalysisSchoolLPC2024TaggingExercise
+Repository for the Heavy Resonance Tagging exercise for CMSDAS@LPC2025 - https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideCMSDataAnalysisSchoolLPC2025TaggingExercise
 
 The tutorial is heavily based on the jet tagging tools and framework/files.
 
 Produced for the BoostedJet Tagging paper [JME-18-002](http://cms.cern.ch/iCMS/analysisadmin/viewanalysis?id=2101&field=id&value=2101&name=Heavy%20jet%20tagging%20algorithms%20in%2013%20TeV%20data%20(2016%20dataset)) and the corresponding HATS.
+
+DAS exercise in [2024](https://github.com/irenedutta23/HATS_HRT/tree/DAS2024)
 
 DAS exercise in [2023](https://github.com/IreneZoi/HATS_HRT/tree/DAS2023)
 
@@ -19,7 +21,7 @@ Three, very similar options are available to run the jupyter notebook: FNAL EAF,
 
 
 ## Setup on FNAL Elastic Analysis Facility (EAF) 
-To run on FNAL EAF, you will need to be on the Fermilab fgz network (if you are onsite) or use a VPN (if you are offsite, https://redtop.fnal.gov/guide-to-vpn-connections-to-fermilab/). Then login at  https://analytics-hub.fnal.gov using your FNAL Services credentials. Once you successfully connect, click on the blue button "Start My Server". And select the CMSLPC SL7 NEW Coffea-dask Interactive (top left) server options. Click Start at the bottom of the page.
+To run on FNAL EAF, you will need to be on the Fermilab fgz network (if you are onsite) or use a VPN (if you are offsite, https://redtop.fnal.gov/guide-to-vpn-connections-to-fermilab/). Then login at  https://analytics-hub.fnal.gov using your FNAL Services credentials. Once you successfully connect, click on the blue button "Start My Server". And select the CMS  - CPU Interactives - AL9 Dask (Coffea 0.7.x) [stable](top left) server options. Click Start at the bottom of the page.
 
 To open a Terminal click on the corresponding option in the Launcher Tab. If the Launcher tab is not open, you can open a new one from the File menu in the top left. This will open a new tab with a bash terminal.
 
@@ -31,7 +33,7 @@ Execute the following commands (following the appropriate prompts) to copy your 
 The following command will prompt you for your FNAL password
 ```bash
 kinit username@FNAL.GOV
-rsync -rLv username@cmslpc-sl7.fnal.gov:.globus/ ~/.globus/
+rsync -rLv username@cmslpc-el9.fnal.gov:.globus/ ~/.globus/
 chmod 755 ~/.globus
 chmod 600 ~/.globus/*
 kdestroy
@@ -48,30 +50,30 @@ voms-proxy-init -voms cms -valid 192:00
 #### Checkout the code
 Open up a terminal and run the following command from your home area:
 ```bash
-mkdir das2024_hrt
-cd das2024_hrt
-wget https://raw.githubusercontent.com/irenedutta23/HATS_HRT/DAS2024/setup-libraries.ipynb
+mkdir das2025_hrt
+cd das2025_hrt
+wget https://raw.githubusercontent.com/IreneZoi/HATS_HRT/DAS2025/setup-libraries.ipynb
 ```
 
-On the left you should see the `das2024_hrt` directory you created. Double click to go in it. Now double click on the newly downloaded notebook ([setup-libraries.ipynb](setup-libraries.ipynb) - only one cell to run). This will checkout the code and setup your [setup-libraries.ipynb](setup-libraries.ipynb). After running [setup-libraries.ipynb](setup-libraries.ipynb), stop this kernel clicking on the square symbol (Interrupt kernel). You can close this tab (NOT the big browser tab). Then you can continue on to the Exercise section (below).
+On the left you should see the `das2025_hrt` directory you created. Double click to go in it. Now double click on the newly downloaded notebook ([setup-libraries.ipynb](setup-libraries.ipynb) - only one cell to run). This will checkout the code and setup your [setup-libraries.ipynb](setup-libraries.ipynb). After running [setup-libraries.ipynb](setup-libraries.ipynb), stop this kernel clicking on the square symbol (Interrupt kernel). You can close this tab (NOT the big browser tab). Then you can continue on to the Exercise section (below).
 
 
 #### Exercise
-Run the notebook [taggerComp.ipynb](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`. Be sure to select the `nanohrt-hats` kernel.
+Run the notebook [taggerComp.ipynb](taggerComp.ipynb) in `das2025_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`. Be sure to select the `nanohrt-das` kernel.
 
-## Setup on LPC
+## Setup on LPC - SO FAR NOT WORKING!!!
 To run on LPC, log in via the command below (**note**: replace `username` with your `FNAL` username!).
 ```bash
-ssh -L localhost:9999:localhost:9999 username@cmslpc-sl7.fnal.gov
+ssh -L localhost:9999:localhost:9999 username@cmslpc-el9.fnal.gov
 ```
 and setup CMSSW:
 ```bash
 # source /cvmfs/cms.cern.ch/cmsset_default.sh # this should be in your bash profile
-mkdir das2024_hrt
-cd das2024_hrt
-cmsrel CMSSW_11_1_0_pre5
-cd CMSSW_11_1_0_pre5/src
-git clone https://github.com/irenedutta23/HATS_HRT.git DAS2024HRT -b DAS2024
+mkdir das2025_hrt
+cd das2025_hrt
+cmsrel CMSSW_14_1_0_pre4
+cd CMSSW_14_1_0_pre4/src
+git clone https://github.com/IreneZoi/HATS_HRT.git DAS2025 -b DAS2025
 cmsenv
 scram b -j 4
 cmsenv
@@ -89,7 +91,7 @@ Run the notebook [taggerComp.ipynb](taggerComp.ipynb)
 
 
 
-## Setup on Vanderbilt (least reliable)
+## Setup on Vanderbilt (least reliable) - SO FAR NOT CHECKED!
 To run on Vanderbilt, login at https://jupyter.accre.vanderbilt.edu/ using your CERN credentials. Once you successfully connect, you should see the following front page
 
 <img src="jupyter-login.png" width="600px" />
@@ -106,7 +108,7 @@ This will open a new tab with a bash terminal. Execute the following commands (f
 The following command will prompt you for your FNAL password
 ```bash
 kinit username@FNAL.GOV
-rsync -rLv username@cmslpc-sl7.fnal.gov:.globus/ ~/.globus/
+rsync -rLv username@cmslpc-el9.fnal.gov:.globus/ ~/.globus/
 chmod 755 ~/.globus
 chmod 600 ~/.globus/*
 kdestroy
@@ -123,9 +125,9 @@ voms-proxy-init -voms cms -valid 192:00
 ### Checkout the code
 Open up a terminal and run the following command from your home area:
 ```bash
-mkdir das2024_hrt
-cd das2024_hrt
-wget https://raw.githubusercontent.com/irenedutta23/HATS_HRT/DAS2024/setup-libraries.ipynb
+mkdir das2025_hrt
+cd das2025_hrt
+wget https://raw.githubusercontent.com/IreneZoi/HATS_HRT/DAS2025/setup-libraries.ipynb
 ```
 
 
@@ -133,5 +135,5 @@ Go back to your Jupyter browser (Home) page and open/run(double-click) the newly
 
 
 ### Exercise
-Run the notebook [taggerComp.ipynb](taggerComp.ipynb) in `das2024_hrt/CMSSW_11_1_0_pre5/src/DAS2024HRT`
+Run the notebook [taggerComp.ipynb](taggerComp.ipynb) in `das2025_hrt/CMSSW_14_1_0_pre4/src/DAS2025HRT`
 
