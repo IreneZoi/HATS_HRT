@@ -64,4 +64,25 @@ On the left you should see the `das2025_hrt` directory you created. Double click
 Run the notebook [HeavyResonanceTagging.ipynb](HeavyResonanceTagging.ipynb).
 First run the various cells. There are instructions as you go and a list of exercises at the end of the notebook.
 
+## Setup on SWAN (CERN)
+Login at https://swan-k8s.cern.ch/ using your CERN credentials. Once you successfully connect, select the default environmentas shown in the image below.
 
+
+<img src="environment.png" width="600px" />
+
+Each time you log in, open a terminal and execute:
+```bash
+voms-proxy-init -voms cms -valid 192:00
+```
+
+#### Checkout the code
+Open up a terminal and run the following command from your home area:
+```bash
+git clone https://github.com/IreneZoi/HATS_HRT.git das2025_hrt
+```
+
+You should now find the `das2025_hrt` directory in your `CERNbox`. Double click to go in it. Now double click on the notebook [HeavyResonanceTagging.ipynb](HeavyResonanceTagging.ipynb). Select the Python3 kernel. 
+
+#### Exercise
+Run the notebook [HeavyResonanceTagging.ipynb](HeavyResonanceTagging.ipynb).
+First run the various cells. There are instructions as you go and a list of exercises at the end of the notebook.
