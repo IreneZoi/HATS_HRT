@@ -65,7 +65,7 @@ Run the notebook [HeavyResonanceTagging.ipynb](HeavyResonanceTagging.ipynb).
 First run the various cells. There are instructions as you go and a list of exercises at the end of the notebook.
 
 ## Setup on SWAN (CERN)
-Login at https://swan-k8s.cern.ch/ using your CERN credentials. Once you successfully connect, select the default environmentas shown in the image below.
+Login at https://swan-k8s.cern.ch/ using your CERN credentials. Once you successfully connect, select the default environmentas shown in the image below. You can learn more about SWAN here https://swan.web.cern.ch/swan/.
 
 
 <img src="environment.png" width="600px" />
