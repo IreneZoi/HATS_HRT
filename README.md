@@ -57,7 +57,7 @@ Open up a terminal and run the following command from your home area:
 git clone https://github.com/IreneZoi/HATS_HRT.git das2025_hrt
 ```
 
-On the left you should see the `das2025_hrt` directory you created. Double click to go in it. Now double click on the notebook [HeavyResonanceTagging.ipynb](HeavyResonanceTagging.ipynb). Select the Python3 (Safe mode kernel). 
+On the left you should see the `das2025_hrt` directory you created. Double click to go in it. Now double click on the notebook [HeavyResonanceTagging.ipynb](HeavyResonanceTagging.ipynb). Select the Python3 (Safe mode) kernel. 
 
 
 #### Exercise
