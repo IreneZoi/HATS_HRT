@@ -75,13 +75,41 @@ Login at https://swan-k8s.cern.ch/ using your CERN credentials. Once you success
 
 <img src="environment.png" width="600px" />
 
+Open up a terminal as shown in the image below
+<img src="terminal_swan.png" width="600px" />
+
+
+### Upload Grid Certificates - first time only!
+Check if you have a `.globus` directory in your SWAN home area with a recent and valid certificate 
+```bash
+ls -altr .globus
+```
+If not, create the `.globus` directory 
+```bash
+mkdir .globus
+```
+and copy the p12 file from your `.globus` directory on lxplus /afs area or LPC. Once copied, you will install it:
+
+```bash
+scp username@lxplus.cern.ch:.globus/myCertificate.p12 ~/.globus/
+openssl pkcs12 -clcerts -nokeys -in myCertificate.p12 -out usercert.pem
+openssl pkcs12 -nocerts -in myCertificate.p12 -out userkey.pem
+chmod go-rw $HOME/.globus/userkey.pem
+```
+
+#### Initialize Your Proxy at every Login!
+If you have a password on your grid certificate, you'll need to remember to execute the following in a terminal *each time you log in to Jupyter*. Similar to the LPC cluster, you will get a new host at each logon, and the new host won't have your old credentials.
+
 Each time you log in, open a terminal and execute:
+
 ```bash
 voms-proxy-init -voms cms -valid 192:00
 ```
 
+
+
 #### Checkout the code
-Open up a terminal and run the following command from your home area:
+Run the following command from your home area:
 ```bash
 git clone https://github.com/IreneZoi/HATS_HRT.git das2025_hrt
 ```
