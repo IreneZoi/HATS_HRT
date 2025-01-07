@@ -51,6 +51,11 @@ Each time you log in, open a terminal and execute:
 voms-proxy-init -voms cms -valid 192:00
 ```
 
+#### Install some needed packages
+```bash
+python -m pip install tensorflow==2.14.1
+```
+
 #### Checkout the code
 Open up a terminal and run the following command from your home area:
 ```bash
